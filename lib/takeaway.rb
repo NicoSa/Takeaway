@@ -1,12 +1,16 @@
+require 'color_text'
+require_relative './takeawayhelpers.rb'
 
 class TakeAway
 
+	include TakeAwayHelpers
+
 	def initialize
-		menu
+		display_menu
 	end
 
-	def menu 
-		true
+	def display_menu 
+		menu
 	end
 
 end
