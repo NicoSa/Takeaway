@@ -1,4 +1,13 @@
+
 class TakeAway
+
+	def initialize
+		menu
+	end
+
+	def menu 
+		true
+	end
 
 end
 
@@ -14,4 +23,11 @@ end
 - in IRB -> order is placed -> the text should actually be sent
 - Use your mobile phone number
 	
+Lark´s tongues
+wren´s livers
+chaffinch brains
+jaguars earlobes
+wolf nipple chips
+dromedary pretzels
+tuscany fried bats
 =end
