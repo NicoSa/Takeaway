@@ -1,9 +1,9 @@
 require 'color_text'
-require_relative './takeawayhelpers.rb'
+require_relative './helpers.rb'
 
 class TakeAway
 
-	include TakeAwayHelpers
+	include Helpers
 
 
 	def initialize

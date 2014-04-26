@@ -1,4 +1,4 @@
-module TakeAwayHelpers
+module Helpers
 
 	MENU = [{"Lark´s Tongues" => 5},
 			{"Wren´s Livers" => 8},
