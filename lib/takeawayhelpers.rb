@@ -1,12 +1,12 @@
 module TakeAwayHelpers
 
-	MENU = [{"Lark´s Tongues" => 5.50},
-			{"Wren´s Livers" => 8.50},
-		    {"Chaffinch Brains" => 7.50},
-		    {"Jaguar´s Earlobes" => 9.90},
-		    {"Wolf Nipple Chips" => 4.90}, 
-		    {"Dromedary Pretzels" => 4.90},
-		    {"Tuscany Fried Bats" => 7.90},
+	MENU = [{"Lark´s Tongues" => 5},
+			{"Wren´s Livers" => 8},
+		    {"Chaffinch Brains" => 7},
+		    {"Jaguar´s Earlobes" => 9},
+		    {"Wolf Nipple Chips" => 4}, 
+		    {"Dromedary Pretzels" => 4},
+		    {"Tuscany Fried Bats" => 7},
 			{"Waifer Thin Mint" => 1}]
  	
 	
@@ -20,7 +20,6 @@ module TakeAwayHelpers
 		cute_line
 		create_menu
 		cute_line
-
 	end
 
 	def welcome_message
