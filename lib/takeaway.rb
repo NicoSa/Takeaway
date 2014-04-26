@@ -6,16 +6,11 @@ class TakeAway
 	include Helpers
 
 
-	def initialize
-		display_menu
-		@ordered_item_array = []
+	def initialize(order)
+		@order = order
 	end
 
-	def display_menu 
-		menu
-		order_prompt_message
-	end
-
+	
 	
 end
 
