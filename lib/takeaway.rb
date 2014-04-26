@@ -5,15 +5,20 @@ class TakeAway
 
 	include TakeAwayHelpers
 
+
 	def initialize
 		display_menu
+		@ordered_item_array = []
 	end
 
 	def display_menu 
 		menu
+		order_prompt_message
 	end
 
+	
 end
+
 
 =begin
 	
