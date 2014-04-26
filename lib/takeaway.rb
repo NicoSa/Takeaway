@@ -5,13 +5,24 @@ class TakeAway
 
 	include Helpers
 
+	attr_reader :order, :calculated_total
 
 	def initialize(order)
 		@order = order
+		@calculated_total = 0
+	end
+
+	def calculate_total
+		order.food_quantities.each{|item, quantity| @calculated_total += (MENU[item] * quantity)}
+		raise "Can´t perform order, wrong total! #{order.suggested_total} actual total: #{@calculated_total}" if order.suggested_total != @calculated_total
+		@calculated_total
 	end
 
 	
+
+
 	
+
 end
 
 

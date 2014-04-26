@@ -2,11 +2,13 @@ require_relative './helpers.rb'
 
 class Order
 
-	attr_reader :food_quantities, :total
+	include Helpers
 
-	def initialize(food_quantities,total)
+	attr_reader :food_quantities, :suggested_total
+
+	def initialize(food_quantities,suggested_total)
 		@food_quantities = food_quantities
-		@total = total
+		@suggested_total = suggested_total
 	end
 
 end
