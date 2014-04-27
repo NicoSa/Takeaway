@@ -55,4 +55,13 @@ describe TakeAway do
 
   end
 
+  context '|Others:' do
+
+    # it 'displays the menu' do
+    #  # expect(display_menu).to include
+    #       takeaway_right_total.display_menu.include?( 'Tongues' ).should == true
+    # end
+
+  end
+
 end
