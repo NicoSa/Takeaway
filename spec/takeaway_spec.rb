@@ -24,12 +24,17 @@ describe TakeAway do
   	expect(takeaway_right_total.totals_match?).to be_true
   end
 
+  it 'raises Great Error instead of sending confirmation sms if total wasn´t calculated!' do
+  	expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
+  end
+
   it 'raises Great Error instead of sending confirmation sms if total doesn´t match' do
   	takeaway_wrong_total.calculate_total!
   	expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
   end
 
-  #it 'sents confirmation sms if totals match' do
+  # it 'sents confirmation sms if totals match' do
+  # 	takeaway_right_total.calculate_total!
 
 
 
