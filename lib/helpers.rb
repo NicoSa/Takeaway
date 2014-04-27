@@ -1,7 +1,5 @@
 module Helpers
 
-
-
   MENU = {"Lark´s Tongues" => 5,
           "Wren´s Livers" => 8,
           "Chaffinch Brains" => 7,
@@ -18,14 +16,6 @@ module Helpers
   def sent_confirmation
     generate_timestamp
     send_sms(@sms_body)
-  end
-
-  def raise_great_error
-    raise GreatError, totals_dont_match_error
-  end
-
-  def totals_dont_match_error
-    "Can´t perform order, wrong total! #{order.suggested_total} actual total: #{@calculated_total}"
   end
 
 end

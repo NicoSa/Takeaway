@@ -2,7 +2,7 @@ require 'order'
 
 describe Order do
 
-  let(:order)                       {Order.new({"Lark´s Tongues" => 5,"Wren´s Livers" => 10}, 30)}
+  let(:order) { Order.new({"Lark´s Tongues" => 5,"Wren´s Livers" => 10}, 30)}
 
   it 'takes in quantity of food items' do
     expect(order.food_quantities).to eq ({"Lark´s Tongues" => 5,"Wren´s Livers" => 10})

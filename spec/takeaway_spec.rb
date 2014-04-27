@@ -4,10 +4,11 @@ require 'order'
 describe TakeAway do
 
 
-  let(:order_wrong_total)    {Order.new({"Lark´s Tongues" => 2,"Wren´s Livers" => 8}, 30)}
-  let(:order_right_total)    {Order.new({"Lark´s Tongues" => 2,"Wren´s Livers" => 8}, 74)}
+  let(:order_wrong_total)    { Order.new({"Lark´s Tongues" => 2,"Wren´s Livers" => 8}, 30)}
+  let(:order_right_total)    { Order.new({"Lark´s Tongues" => 2,"Wren´s Livers" => 8}, 74)}
   let(:takeaway_right_total) { TakeAway.new(order_right_total) }
   let(:takeaway_wrong_total) { TakeAway.new(order_wrong_total) }
+  let(:order_wrong_items)    { TakeAway.new(Order.new({a:1},5))}
 
   context '|Total:' do
 
@@ -28,7 +29,7 @@ describe TakeAway do
 
   end
 
-  context '|Sending Confirmation Errors:' do
+  context '|Errors:' do
 
     it 'raises Great Error if total wasn´t calculated!' do
       expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
@@ -37,6 +38,10 @@ describe TakeAway do
     it 'raises Great Error if totals don´t match' do
       takeaway_wrong_total.calculate_total
       expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
+    end
+
+    it 'returns Great Error for wrong item' do
+      expect{order_wrong_items.check_for_wrong_items}.to raise_error (GreatError)
     end
 
   end
@@ -52,15 +57,6 @@ describe TakeAway do
       takeaway_right_total.calculate_total
       expect(takeaway_right_total.sent_order_confirmation).to eq "Order confirmation has been sent to your phone!"
     end
-
-  end
-
-  context '|Others:' do
-
-    # it 'displays the menu' do
-    #  # expect(display_menu).to include
-    #       takeaway_right_total.display_menu.include?( 'Tongues' ).should == true
-    # end
 
   end
 
