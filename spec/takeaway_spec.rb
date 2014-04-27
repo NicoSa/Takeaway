@@ -9,46 +9,46 @@ describe TakeAway do
   let(:takeaway_right_total) { TakeAway.new(order_right_total) }
   let(:takeaway_wrong_total) { TakeAway.new(order_wrong_total) }
 
-  context 'Total' do
+  context '|Total:' do
 
-    it 'calculates correct for an order' do
+    it 'calculates correctly for an order' do
       takeaway_right_total.calculate_total
       expect(takeaway_right_total.total).to eq 74
     end
 
-    it 'returns false for wrong total' do
+    it 'returns false if incorrect' do
       takeaway_wrong_total.calculate_total
       expect(takeaway_wrong_total.totals_match?).to be_false
     end
 
-    it 'returns true for right total' do
+    it 'returns true if correct' do
       takeaway_right_total.calculate_total
       expect(takeaway_right_total.totals_match?).to be_true
     end
 
   end
 
-  context 'Sending Confirmation Errors' do
+  context '|Sending Confirmation Errors:' do
 
-    it 'raises Great Error instead of sending confirmation sms if total wasn´t calculated!' do
+    it 'raises Great Error if total wasn´t calculated!' do
       expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
     end
 
-    it 'raises Great Error instead of sending confirmation sms if total doesn´t match' do
+    it 'raises Great Error if totals don´t match' do
       takeaway_wrong_total.calculate_total
       expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
     end
 
   end
 
-  context 'Sending Message' do
+  context '|Sending SMS:' do
 
     before do
       takeaway_right_total.stub(:send_sms).and_return("Order confirmation has been sent to your phone!")
     end
 
 
-    it 'sents confirmation sms if totals match' do
+    it 'is sent when totals match' do
       takeaway_right_total.calculate_total
       expect(takeaway_right_total.sent_order_confirmation).to eq "Order confirmation has been sent to your phone!"
     end

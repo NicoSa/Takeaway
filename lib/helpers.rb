@@ -10,7 +10,7 @@ module Helpers
           "Waifer Thin Mint" => 1}
 
   def sent_confirmation
-    generate_sms_body
+    generate_timestamp
     send_sms(@sms_body)
   end
 
