@@ -9,4 +9,8 @@ module Helpers
 		    "Tuscany Fried Bats" => 7,
 			"Waifer Thin Mint" => 1}
  	
+ 	def totals_dont_match_error
+ 		"Can´t perform order, wrong total! #{order.suggested_total} actual total: #{@calculated_total}"
+ 	end
+
 end
