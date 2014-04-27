@@ -24,7 +24,10 @@ describe TakeAway do
   	expect(takeaway_right_total.totals_match?).to be_true
   end
 
-  #xit 'raises Great Error for totals do not match' do
+  it 'raises Great Error when confirming order if totals don´t match' do
+  	takeaway_wrong_total.calculate_total!
+  	expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
+  end
 
 
 

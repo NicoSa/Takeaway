@@ -28,15 +28,9 @@ class TakeAway
     order.suggested_total == @total
   end
 
-  def raise_great_error
-    raise GreatError, totals_dont_match_error if !totals.match?
-    true
-  end
-
-
-  def confirm_order
-    generate_sms_body
-    send_sms(@sms_body) if totals_match?
+  def sent_order_confirmation
+  	raise_great_error unless totals_match?
+  	sent_confirmation
   end
 
 end
