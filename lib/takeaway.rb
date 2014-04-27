@@ -1,30 +1,45 @@
 require 'color_text'
+require 'rubygems'
+require 'twilio-ruby'
+
 require_relative './helpers.rb'
+require_relative './smscontroller.rb'
+require_relative './smsbody.rb'
+require_relative './greaterror.rb'
 
 class TakeAway
 
-	include Helpers
+  include Helpers
+  include SMSController
+  include SMSBody
 
-	attr_reader :order, :total
+  attr_reader :order, :total
 
-	def initialize(order)
-		@order = order
-		@total = 0
-	end
+  def initialize(order)
+    @order = order
+    @total = 0
+  end
 
-	def calculate_total!
-		order.food_quantities.each{|item, quantity| @total += (MENU[item] * quantity)}
-	end
+  def calculate_total!
+    order.food_quantities.each{|item, quantity| @total += (MENU[item] * quantity)}
+  end
 
-	def totals_match?
-		raise totals_dont_match_error if order.suggested_total != @total
-	end
+  def totals_match?
+    order.suggested_total == @total
+  end
+
+  def raise_great_error
+    raise GreatError, totals_dont_match_error if !totals.match?
+    true
+  end
 
 
-	
+  def confirm_order
+    generate_sms_body
+    send_sms(@sms_body) if totals_match?
+  end
 
 end
-
 
 =begin
 	

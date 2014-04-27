@@ -1,0 +1,2 @@
+class GreatError < RuntimeError
+end
