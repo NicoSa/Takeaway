@@ -1,4 +1,3 @@
-require 'color_text'
 require 'rubygems'
 require 'twilio-ruby'
 
