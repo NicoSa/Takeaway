@@ -21,12 +21,8 @@ class TakeAway
     @total = 0
   end
 
-  def check_for_wrong_items
-    order.food_quantities.each{|item, quantity| raise GreatError, "Item doesn´t exist" if MENU[item] != Fixnum}
-  end
-
   def calculate_total
-    #check_for_wrong_items
+    check_for_wrong_items
     order.food_quantities.each{|item, quantity| @total += (MENU[item] * quantity)}
   end
 

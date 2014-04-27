@@ -18,4 +18,8 @@ module Helpers
     send_sms(@sms_body)
   end
 
+  def check_for_wrong_items
+    order.food_quantities.each{|item, quantity| raise GreatError, "Item doesn´t exist" if MENU[item].class != Fixnum}
+  end
+
 end
