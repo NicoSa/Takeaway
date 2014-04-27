@@ -13,4 +13,8 @@ module Helpers
  		"Can´t perform order, wrong total! #{order.suggested_total} actual total: #{@calculated_total}"
  	end
 
+ 	def display_menu
+ 		MENU.each{|item, price| puts "> #{item} | Price: #{price} GBP"}
+ 	end
+
 end
