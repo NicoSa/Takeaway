@@ -6,7 +6,7 @@ module SMSController
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     message = @client.account.sms.messages.create(:body => "#{sms_body}", :to => "+447432865747", :from => "+442891042146")
-    puts "Confirmation has been sent to your phone!"
+    puts "Order confirmation has been sent to your phone!"
     true
   end
 

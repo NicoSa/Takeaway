@@ -28,9 +28,8 @@ class TakeAway
   end
 
   def sent_order_confirmation
-  	raise_great_error unless totals_match?
-  	sent_confirmation
+    raise_great_error unless totals_match?
+    sent_confirmation
   end
 
 end
-
