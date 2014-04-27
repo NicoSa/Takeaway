@@ -19,7 +19,7 @@ class TakeAway
     @total = 0
   end
 
-  def calculate_total!
+  def calculate_total
     order.food_quantities.each{|item, quantity| @total += (MENU[item] * quantity)}
   end
 
