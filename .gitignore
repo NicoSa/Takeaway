@@ -1,5 +1,6 @@
 .DS_Store
-Takeway.sublime-project   
+Takeaway.sublime-project   
 Takeaway.sublime-workspac
+*.sublime-project
 *.sublime-workspace
 Instructions.rtf
