@@ -1,7 +1,7 @@
 module ErrorHelpers
 
   def raise_great_error
-    raise GreatError, totals_dont_match_error
+    raise totals_dont_match_error
   end
 
   def totals_dont_match_error
@@ -9,11 +9,11 @@ module ErrorHelpers
   end
 
   def argument_one_no_hash_error
-    raise GreatError, "Argument One has to be a Hash!" if @food_quantities.class != Hash
+    raise "Argument One has to be a Hash!" if @food_quantities.class != Hash
   end
 
   def argument_two_no_fixnum_error
-    raise GreatError, "Argument Two has to be a Fixnum!" if @suggested_total.class != Fixnum
+    raise "Argument Two has to be a Fixnum!" if @suggested_total.class != Fixnum
   end
 
 end

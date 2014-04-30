@@ -13,11 +13,11 @@ describe Order do
   end
 
   it 'raises error when don´t pass hash as first argument' do
-    expect{Order.new([5,10], 30)}.to raise_error(GreatError)
+    expect{Order.new([5,10], 30)}.to raise_error
   end
 
   it 'raises error when don´t pass fixnum as second argument' do
-    expect{Order.new({a:1}, "Wrong Argument")}.to raise_error(GreatError)
+    expect{Order.new({a:1}, "Wrong Argument")}.to raise_error
   end
 
 end

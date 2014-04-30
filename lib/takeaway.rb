@@ -1,15 +1,17 @@
 require 'rubygems'
 require 'twilio-ruby'
 
-require_relative './helpers.rb'
+require_relative './takeawayhelpers.rb'
 require_relative './smscontroller.rb'
 require_relative './smsbody.rb'
 require_relative './greaterror.rb'
 require_relative './errorhelpers.rb'
+require_relative './menu.rb'
 
 class TakeAway
 
-  include Helpers
+  include Menu
+  include TakeAwayHelpers
   include ErrorHelpers
   include SMSController
   include SMSBody

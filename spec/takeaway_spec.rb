@@ -32,16 +32,16 @@ describe TakeAway do
   context '|Errors:' do
 
     it 'raises Great Error if total wasn´t calculated!' do
-      expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
+      expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error 
     end
 
     it 'raises Great Error if totals don´t match' do
       takeaway_wrong_total.calculate_total
-      expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error (GreatError)
+      expect{takeaway_wrong_total.sent_order_confirmation}.to raise_error
     end
 
     it 'returns Great Error for wrong item' do
-      expect{order_wrong_items.check_for_wrong_items}.to raise_error (GreatError)
+      expect{order_wrong_items.check_for_wrong_items}.to raise_error 
     end
 
   end
