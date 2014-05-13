@@ -21,6 +21,7 @@ irb
 require './require_all.rb'
 ```
 - Play with the classes, place an order and have it send an SMS to your phone!
+
 How to run tests
 ----
 ```sh
